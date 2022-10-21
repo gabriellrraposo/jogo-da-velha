@@ -11,4 +11,18 @@ let handleClick = (event) => {
     let position = square.id
 
     handleMove(position)
+    updateSquares()
+}
+
+let updateSquares = () => {
+    let squares = document.querySelectorAll('.square')
+
+    squares.forEach((square) => {
+        let position = square.id
+        let symbol = board[position]
+
+        if (symbol != '') {
+            square.innerHTML = `<div class='${symbol}'><div>`
+        }
+    })
 }
