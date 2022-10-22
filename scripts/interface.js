@@ -15,18 +15,25 @@ let handleClick = (event) => {
             alert('Game Over')
         }, 100)
     }
-    updateSquares()
+    updateSquare(position)
 }
 
-let updateSquares = () => {
-    let squares = document.querySelectorAll('.square')
 
-    squares.forEach((square) => {
-        let position = square.id
-        let symbol = board[position]
-
-        if (symbol != '') {
-            square.innerHTML = `<div class="${symbol}"><div>`
-        }
-    })
+let updateSquare = (position) => {
+    let square = document.getElementById(position.toString())
+    let symbol = board[position]
+    square.innerHTML = `<div class="${symbol}"><div>`
 }
+
+// let updateSquares = () => {
+//     let squares = document.querySelectorAll('.square')
+
+//     squares.forEach((square) => {
+//         let position = square.id
+//         let symbol = board[position]
+
+//         if (symbol != '') {
+//             square.innerHTML = `<div class="${symbol}"><div>`
+//         }
+//     })
+// }
